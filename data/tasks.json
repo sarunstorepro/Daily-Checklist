@@ -1,3 +1,12 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": "mugkyrh8cbgglc",
+      "text": "Godaddy access inform Mangemnet Channel",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-09-25",
+      "completedOn": null
+    }
+  ]
 }
