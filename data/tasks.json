@@ -75,10 +75,10 @@
     {
       "id": "mugl1nloq01fmm",
       "text": "Scott speed task check update with customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-09-25",
-      "completedOn": null
+      "completedOn": "2026-09-25"
     },
     {
       "id": "mugl27fev2d8me",
