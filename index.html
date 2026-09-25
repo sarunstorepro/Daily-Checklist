@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily Task Diary</title>
+<style>
+  :root {
+    --bg: #f6f3ec;
+    --paper: #fffdf8;
+    --ink: #2e2a24;
+    --ink-light: #766f61;
+    --line: #e4ddcc;
+    --accent: #b5562d;
+    --done: #6f8f5e;
+    --danger: #b5562d;
+    --shadow: 0 1px 3px rgba(46,42,36,0.08), 0 1px 2px rgba(46,42,36,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1a17;
+      --paper: #26231f;
+      --ink: #ece7dc;
+      --ink-light: #a49b8a;
+      --line: #3a352d;
+      --accent: #e08b5e;
+      --done: #92b57e;
+      --danger: #e08b5e;
+      --shadow: 0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 16px 80px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; margin: 0; }
+  .today-date { color: var(--ink-light); font-size: 0.85rem; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid var(--line); align-items: center; }
+  .tab-btn { background: none; border: none; padding: 10px 14px; font-size: 0.92rem; color: var(--ink-light); cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .spacer { flex: 1; }
+  .icon-btn { background: none; border: none; color: var(--ink-light); cursor: pointer; font-size: 1rem; padding: 6px 8px; }
+  .icon-btn:hover { color: var(--accent); }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+  .add-row { display: flex; gap: 8px; padding: 12px; }
+  .add-row input { flex: 1; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 7px; padding: 10px 12px; font-size: 0.95rem; font-family: inherit; }
+  .add-row input:focus { outline: none; border-color: var(--accent); }
+  .add-row button { background: var(--accent); color: #fff; border: none; border-radius: 7px; padding: 0 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+  .add-row button:disabled { opacity: 0.5; cursor: default; }
+  .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-light); padding: 14px 14px 6px; display: flex; justify-content: space-between; }
+  ul.task-list { list-style: none; margin: 0; padding: 0 8px 10px; }
+  .task-item { display: flex; align-items: center; gap: 10px; padding: 9px 6px; border-bottom: 1px solid var(--line); }
+  .task-item:last-child { border-bottom: none; }
+  .check { width: 20px; height: 20px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--ink-light); cursor: pointer; display: flex; align-items: center; justify-content: center; background: transparent; }
+  .check.checked { background: var(--done); border-color: var(--done); color: #fff; font-size: 12px; }
+  .task-text { flex: 1; font-size: 0.95rem; word-break: break-word; }
+  .task-item.completed .task-text { text-decoration: line-through; color: var(--ink-light); }
+  .age-tag { font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 1px 7px; flex-shrink: 0; opacity: 0.85; }
+  .del-btn { background: none; border: none; color: var(--ink-light); cursor: pointer; font-size: 0.85rem; padding: 4px 6px; opacity: 0.6; }
+  .del-btn:hover { opacity: 1; color: var(--danger); }
+  .empty { padding: 26px 14px; text-align: center; color: var(--ink-light); font-size: 0.9rem; }
+  .stats { display: flex; gap: 14px; margin: 14px 2px 0; font-size: 0.8rem; color: var(--ink-light); }
+  .history-day { margin-bottom: 14px; }
+  .history-day h3 { font-family: Georgia, "Times New Roman", serif; font-size: 0.95rem; margin: 0 0 6px 2px; color: var(--ink); }
+  .history-day .count-tag { font-size: 0.72rem; color: var(--ink-light); font-weight: normal; margin-left: 6px; }
+  footer { text-align: center; color: var(--ink-light); font-size: 0.72rem; margin-top: 30px; }
+  footer a { color: var(--ink-light); }
+
+  /* setup screen */
+  .setup-wrap { max-width: 460px; margin: 60px auto; padding: 0 16px; }
+  .setup-wrap h1 { font-family: Georgia, serif; font-size: 1.4rem; margin-bottom: 4px; }
+  .setup-wrap p.lead { color: var(--ink-light); font-size: 0.9rem; margin-top: 0; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.8rem; color: var(--ink-light); margin-bottom: 5px; }
+  .field input { width: 100%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 7px; padding: 10px 12px; font-size: 0.92rem; font-family: inherit; }
+  .field input:focus { outline: none; border-color: var(--accent); }
+  .setup-wrap button.primary { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 7px; padding: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer; margin-top: 6px; }
+  .setup-wrap button.primary:disabled { opacity: 0.5; cursor: default; }
+  .help { font-size: 0.78rem; color: var(--ink-light); margin-top: 18px; line-height: 1.5; }
+  .help a { color: var(--accent); }
+  .error-box { background: var(--accent); color: #fff; padding: 10px 14px; border-radius: 7px; font-size: 0.85rem; margin-bottom: 14px; }
+  .status-line { font-size: 0.75rem; color: var(--ink-light); margin-top: 8px; min-height: 1em; }
+</style>
+</head>
+<body>
+
+<div id="setupScreen" class="setup-wrap" style="display:none;">
+  <h1>📔 Daily Task Diary</h1>
+  <p class="lead">One-time setup — connect this page to your private data repo on GitHub.</p>
+  <div id="setupError"></div>
+  <div class="field">
+    <label>GitHub username or org (owner of the repo)</label>
+    <input id="cfgOwner" type="text" placeholder="sarunstorepro" value="sarunstorepro" />
+  </div>
+  <div class="field">
+    <label>Repo name</label>
+    <input id="cfgRepo" type="text" placeholder="Daily-Checklist" value="Daily-Checklist" />
+  </div>
+  <div class="field">
+    <label>Branch</label>
+    <input id="cfgBranch" type="text" placeholder="main" value="main" />
+  </div>
+  <div class="field">
+    <label>Personal access token (fine-grained, Contents: Read & write, scoped to this repo only)</label>
+    <input id="cfgToken" type="password" placeholder="github_pat_..." />
+  </div>
+  <button class="primary" id="cfgSaveBtn">Connect</button>
+  <div class="status-line" id="setupStatus"></div>
+  <div class="help">
+    Need a token? On GitHub go to <strong>Settings → Developer settings →
+    Personal access tokens → Fine-grained tokens → Generate new token</strong>,
+    set <strong>Repository access</strong> to only this repo (Daily-Checklist), and under
+    <strong>Permissions → Repository permissions</strong> set
+    <strong>Contents</strong> to <strong>Read and write</strong>. The token is
+    saved only in this browser's local storage — it is never written
+    anywhere else.
+  </div>
+</div>
+
+<div id="app" style="display:none;">
+<div class="wrap">
+  <header>
+    <h1>📔 Daily Task Diary</h1>
+    <div class="today-date" id="todayDate"></div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="today">Today</button>
+    <button class="tab-btn" data-tab="history">History</button>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="refreshBtn" title="Refresh from GitHub">⟳</button>
+    <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+  </div>
+
+  <div id="todayView">
+    <div class="card">
+      <div class="add-row">
+        <input id="newTaskInput" type="text" placeholder="What do you need to do?" maxlength="300" />
+        <button id="addBtn">Add</button>
+      </div>
+      <div class="section-label"><span>Pending</span></div>
+      <ul class="task-list" id="pendingList"></ul>
+      <div class="section-label" id="completedTodayLabel" style="display:none;">Completed today</div>
+      <ul class="task-list" id="completedTodayList"></ul>
+    </div>
+    <div class="stats" id="statsRow"></div>
+    <div class="status-line" id="syncStatus"></div>
+  </div>
+
+  <div id="historyView" style="display:none;">
+    <div id="historyList"></div>
+  </div>
+
+  <footer>Backed by a private git repo — every change is a commit, nothing lives on a server.</footer>
+</div>
+</div>
+
+<script>
+(function () {
+  var CONFIG_KEY = 'taskDiaryConfig';
+  var API_ROOT = 'https://api.github.com';
+  var DATA_PATH = 'data/tasks.json';
+
+  var config = null;         // {owner, repo, branch, token}
+  var currentSha = null;     // sha of the currently loaded tasks.json, for safe writes
+  var tasks = [];
+  var writeQueue = Promise.resolve();
+
+  // ---------- date helpers ----------
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+  function formatNice(dateStr) {
+    var p = dateStr.split('-').map(Number);
+    return new Date(p[0], p[1] - 1, p[2]).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  function formatShort(dateStr) {
+    var p = dateStr.split('-').map(Number);
+    return new Date(p[0], p[1] - 1, p[2]).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+  function daysBetween(a, b) {
+    var pa = a.split('-').map(Number), pb = b.split('-').map(Number);
+    var da = new Date(pa[0], pa[1] - 1, pa[2]), db = new Date(pb[0], pb[1] - 1, pb[2]);
+    return Math.round((db - da) / 86400000);
+  }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+
+  // ---------- base64 helpers (utf-8 safe) ----------
+  function utf8ToBase64(str) {
+    var bytes = new TextEncoder().encode(str);
+    var binary = '';
+    bytes.forEach(function (b) { binary += String.fromCharCode(b); });
+    return btoa(binary);
+  }
+  function base64ToUtf8(b64) {
+    var binary = atob(b64.replace(/\n/g, ''));
+    var bytes = new Uint8Array(binary.length);
+    for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  // ---------- config ----------
+  function loadConfig() {
+    try {
+      var raw = localStorage.getItem(CONFIG_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveConfig(c) {
+    localStorage.setItem(CONFIG_KEY, JSON.stringify(c));
+  }
+  function clearConfig() {
+    localStorage.removeItem(CONFIG_KEY);
+  }
+
+  // ---------- GitHub API ----------
+  function apiUrl() {
+    return API_ROOT + '/repos/' + config.owner + '/' + config.repo + '/contents/' + DATA_PATH + '?ref=' + encodeURIComponent(config.branch);
+  }
+  function authHeaders() {
+    return {
+      'Authorization': 'Bearer ' + config.token,
+      'Accept': 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28'
+    };
+  }
+
+  function fetchRemote() {
+    return fetch(apiUrl(), { headers: authHeaders() }).then(function (res) {
+      if (res.status === 404) {
+        // file doesn't exist yet - start empty, create it on first save
+        currentSha = null;
+        return { tasks: [] };
+      }
+      if (!res.ok) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          throw new Error('GitHub API error ' + res.status + ': ' + (body.message || res.statusText));
+        });
+      }
+      return res.json().then(function (body) {
+        currentSha = body.sha;
+        var text = base64ToUtf8(body.content);
+        var parsed;
+        try { parsed = JSON.parse(text); } catch (e) { parsed = { tasks: [] }; }
+        return parsed;
+      });
+    });
+  }
+
+  function writeRemote(newTasks, attempt) {
+    attempt = attempt || 0;
+    var body = {
+      message: 'Update tasks (' + new Date().toISOString() + ')',
+      content: utf8ToBase64(JSON.stringify({ tasks: newTasks }, null, 2) + '\n'),
+      branch: config.branch
+    };
+    if (currentSha) body.sha = currentSha;
+
+    return fetch(apiUrl().split('?')[0], {
+      method: 'PUT',
+      headers: Object.assign({ 'Content-Type': 'application/json' }, authHeaders()),
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      if (res.status === 409 && attempt < 1) {
+        // sha conflict - refetch latest sha and retry once
+        return fetchRemote().then(function () { return writeRemote(newTasks, attempt + 1); });
+      }
+      if (!res.ok) {
+        return res.json().catch(function () { return {}; }).then(function (b) {
+          throw new Error('GitHub API error ' + res.status + ': ' + (b.message || res.statusText));
+        });
+      }
+      return res.json().then(function (b) {
+        currentSha = b.content.sha;
+      });
+    });
+  }
+
+  function queueWrite() {
+    setSyncStatus('Saving…');
+    writeQueue = writeQueue.then(function () {
+      return writeRemote(tasks);
+    }).then(function () {
+      setSyncStatus('Saved to GitHub ✓');
+      setTimeout(function () { setSyncStatus(''); }, 2000);
+    }).catch(function (err) {
+      setSyncStatus('');
+      showError('Could not save: ' + err.message);
+    });
+    return writeQueue;
+  }
+
+  function setSyncStatus(msg) {
+    var el = document.getElementById('syncStatus');
+    if (el) el.textContent = msg;
+  }
+  function showError(msg) {
+    alert(msg);
+  }
+
+  // ---------- rendering ----------
+  var today = todayStr();
+
+  function render() {
+    document.getElementById('todayDate').textContent = formatNice(today);
+
+    var pending = tasks.filter(function (t) { return t.status === 'pending'; })
+                        .sort(function (a, b) { return a.createdOn < b.createdOn ? -1 : 1; });
+    var completedToday = tasks.filter(function (t) { return t.status === 'completed' && t.completedOn === today; });
+
+    var pendingList = document.getElementById('pendingList');
+    pendingList.innerHTML = '';
+    if (pending.length === 0) {
+      pendingList.innerHTML = '<li class="empty">No pending tasks. Add one above ✍️</li>';
+    } else {
+      pending.forEach(function (t) { pendingList.appendChild(taskRow(t, true)); });
+    }
+
+    var completedLabel = document.getElementById('completedTodayLabel');
+    var completedList = document.getElementById('completedTodayList');
+    completedList.innerHTML = '';
+    if (completedToday.length > 0) {
+      completedLabel.style.display = '';
+      completedToday.forEach(function (t) { completedList.appendChild(taskRow(t, false)); });
+    } else {
+      completedLabel.style.display = 'none';
+    }
+
+    var totalPending = tasks.filter(function (t) { return t.status === 'pending'; }).length;
+    var totalCompleted = tasks.filter(function (t) { return t.status === 'completed'; }).length;
+    document.getElementById('statsRow').textContent = totalPending + ' pending overall · ' + totalCompleted + ' completed all-time';
+
+    renderHistory();
+  }
+
+  function taskRow(t, showAge) {
+    var li = document.createElement('li');
+    li.className = 'task-item' + (t.status === 'completed' ? ' completed' : '');
+
+    var check = document.createElement('button');
+    check.className = 'check' + (t.status === 'completed' ? ' checked' : '');
+    check.innerHTML = t.status === 'completed' ? '✓' : '';
+    check.title = t.status === 'completed' ? 'Mark as pending' : 'Mark as done';
+    check.addEventListener('click', function () { toggleComplete(t.id); });
+
+    var text = document.createElement('span');
+    text.className = 'task-text';
+    text.textContent = t.text;
+
+    li.appendChild(check);
+    li.appendChild(text);
+
+    if (showAge && t.createdOn && t.createdOn !== today) {
+      var age = daysBetween(t.createdOn, today);
+      var tag = document.createElement('span');
+      tag.className = 'age-tag';
+      tag.textContent = age + 'd old';
+      li.appendChild(tag);
+    }
+
+    var del = document.createElement('button');
+    del.className = 'del-btn';
+    del.textContent = '✕';
+    del.title = 'Delete';
+    del.addEventListener('click', function () { deleteTask(t.id); });
+    li.appendChild(del);
+
+    return li;
+  }
+
+  function renderHistory() {
+    var historyList = document.getElementById('historyList');
+    var byDate = {};
+    tasks.forEach(function (t) {
+      if (t.status === 'completed' && t.completedOn && t.completedOn !== today) {
+        (byDate[t.completedOn] = byDate[t.completedOn] || []).push(t);
+      }
+    });
+    var dates = Object.keys(byDate).sort().reverse();
+
+    historyList.innerHTML = '';
+    if (dates.length === 0) {
+      historyList.innerHTML = '<div class="empty">No completed history yet. Finished tasks from past days will show up here.</div>';
+      return;
+    }
+    dates.forEach(function (d) {
+      var wrap = document.createElement('div');
+      wrap.className = 'history-day';
+      var h3 = document.createElement('h3');
+      h3.textContent = formatShort(d);
+      var tag = document.createElement('span');
+      tag.className = 'count-tag';
+      tag.textContent = byDate[d].length + ' completed';
+      h3.appendChild(tag);
+      var card = document.createElement('div');
+      card.className = 'card';
+      var ul = document.createElement('ul');
+      ul.className = 'task-list';
+      byDate[d].forEach(function (t) { ul.appendChild(taskRow(t, false)); });
+      card.appendChild(ul);
+      wrap.appendChild(h3);
+      wrap.appendChild(card);
+      historyList.appendChild(wrap);
+    });
+  }
+
+  // ---------- actions ----------
+  function addTask(text) {
+    text = text.trim();
+    if (!text) return;
+    tasks.push({ id: uid(), text: text, status: 'pending', createdOn: today, completedOn: null });
+    render();
+    queueWrite();
+  }
+  function toggleComplete(id) {
+    var t = tasks.find(function (x) { return x.id === id; });
+    if (!t) return;
+    if (t.status === 'pending') {
+      t.status = 'completed';
+      t.completedOn = today;
+    } else {
+      t.status = 'pending';
+      t.completedOn = null;
+    }
+    render();
+    queueWrite();
+  }
+  function deleteTask(id) {
+    tasks = tasks.filter(function (x) { return x.id !== id; });
+    render();
+    queueWrite();
+  }
+
+  // ---------- boot ----------
+  function showApp() {
+    document.getElementById('setupScreen').style.display = 'none';
+    document.getElementById('app').style.display = '';
+  }
+  function showSetup(errorMsg) {
+    document.getElementById('app').style.display = 'none';
+    document.getElementById('setupScreen').style.display = '';
+    var errBox = document.getElementById('setupError');
+    errBox.innerHTML = errorMsg ? '<div class="error-box">' + errorMsg + '</div>' : '';
+    if (config) {
+      document.getElementById('cfgOwner').value = config.owner || '';
+      document.getElementById('cfgRepo').value = config.repo || 'task-diary-data';
+      document.getElementById('cfgBranch').value = config.branch || 'main';
+    }
+  }
+
+  function boot() {
+    config = loadConfig();
+    if (!config || !config.owner || !config.token) {
+      showSetup();
+      return;
+    }
+    showApp();
+    setSyncStatus('Loading…');
+    fetchRemote().then(function (data) {
+      tasks = data.tasks || [];
+      setSyncStatus('');
+      render();
+    }).catch(function (err) {
+      showSetup('Could not load your data repo: ' + err.message);
+    });
+  }
+
+  document.getElementById('cfgSaveBtn').addEventListener('click', function () {
+    var owner = document.getElementById('cfgOwner').value.trim();
+    var repo = document.getElementById('cfgRepo').value.trim() || 'task-diary-data';
+    var branch = document.getElementById('cfgBranch').value.trim() || 'main';
+    var token = document.getElementById('cfgToken').value.trim();
+    if (!owner || !token) {
+      document.getElementById('setupStatus').textContent = 'Please fill in owner and token.';
+      return;
+    }
+    var testConfig = { owner: owner, repo: repo, branch: branch, token: token };
+    document.getElementById('setupStatus').textContent = 'Connecting…';
+    config = testConfig;
+    fetchRemote().then(function (data) {
+      saveConfig(testConfig);
+      tasks = data.tasks || [];
+      document.getElementById('setupStatus').textContent = '';
+      showApp();
+      render();
+      if (currentSha === null) queueWrite(); // create the file on first run
+    }).catch(function (err) {
+      document.getElementById('setupStatus').textContent = '';
+      document.getElementById('setupError').innerHTML = '<div class="error-box">' + err.message + '</div>';
+    });
+  });
+
+  document.getElementById('addBtn').addEventListener('click', function () {
+    var input = document.getElementById('newTaskInput');
+    addTask(input.value);
+    input.value = '';
+    input.focus();
+  });
+  document.getElementById('newTaskInput').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('addBtn').click();
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var tab = btn.getAttribute('data-tab');
+      document.getElementById('todayView').style.display = tab === 'today' ? '' : 'none';
+      document.getElementById('historyView').style.display = tab === 'history' ? '' : 'none';
+    });
+  });
+
+  document.getElementById('refreshBtn').addEventListener('click', function () {
+    setSyncStatus('Refreshing…');
+    fetchRemote().then(function (data) {
+      tasks = data.tasks || [];
+      setSyncStatus('');
+      render();
+    }).catch(function (err) {
+      setSyncStatus('');
+      showError('Could not refresh: ' + err.message);
+    });
+  });
+
+  document.getElementById('settingsBtn').addEventListener('click', function () {
+    if (confirm('Disconnect this browser from your data repo? (Your data on GitHub is untouched — you can reconnect any time.)')) {
+      clearConfig();
+      boot();
+    }
+  });
+
+  boot();
+})();
+</script>
+</body>
+</html>

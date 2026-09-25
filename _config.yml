@@ -1,0 +1,10 @@
+# GitHub Pages builds this repo with Jekyll by default. This tells it to
+# leave the data and scripts folders out of the published site entirely,
+# so even though the repo holds your task data, the live Pages URL only
+# ever serves index.html - your data is never reachable through the
+# published site itself, only through the GitHub API (which requires your
+# token, and requires repo access at all since this repo is private).
+exclude:
+  - data
+  - scripts
+  - README.md
