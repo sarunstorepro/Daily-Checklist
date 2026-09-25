@@ -83,10 +83,10 @@
     {
       "id": "mugl27fev2d8me",
       "text": "Scottt ACK message for speed task",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-09-25",
-      "completedOn": null
+      "completedOn": "2026-09-25"
     },
     {
       "id": "mugl2x6k48c7gi",
