@@ -1,9 +1,9 @@
 # Daily Checklist
 
 A tiny, serverless replacement for a paper task diary. It's one HTML page
-hosted free on GitHub Pages; every add/check-off/delete is saved as a git
-commit to `data/tasks.json` in this same (private) repo, via the GitHub
-API — no server, no database, no paid plan.
+hosted free on Cloudflare Pages; every add/check-off/delete is saved as a
+git commit to `data/tasks.json` in this same (private) repo, via the
+GitHub API — no server, no database, no paid plan.
 
 - **Pending tasks never disappear until you finish or delete them** — that's
   what makes them "carry over" to the next day automatically: there's no
@@ -16,21 +16,30 @@ API — no server, no database, no paid plan.
   into `data/archive/YYYY-MM.json` so the live file stays small forever.
   You never need to touch this yourself.
 
+Only the `public/` folder is ever served publicly. `data/` and `scripts/`
+never leave this private repo — Cloudflare Pages is told to publish just
+`public/`, and this repo is never connected to GitHub Pages (which would
+require making it public).
+
 ## One-time setup
 
-1. **Make sure this repo is Private.** Settings → General → Danger Zone →
-   "Change repository visibility", if it isn't already. (Your task text is
-   only ever read via the GitHub API using your own token — it is never
-   included in the published Pages site, but Private is still the right
-   default since this is your day-to-day work list.)
+1. **Keep this repo Private** — Settings → General → Danger Zone. Nothing
+   here changes that.
 
-2. **Enable GitHub Pages.**
-   Settings → Pages → under "Build and deployment", set **Source** to
-   "Deploy from a branch", branch `main`, folder `/ (root)`. Save. GitHub
-   will give you a URL like `https://sarunstorepro.github.io/Daily-Checklist/`
-   — that's the app.
+2. **Create a Cloudflare account and connect this repo** (free, no card
+   needed):
+   - Go to https://dash.cloudflare.com/ → sign up / log in.
+   - Go to **Workers & Pages → Create → Pages → Connect to Git**.
+   - Authorize Cloudflare's GitHub App and give it access to the
+     `Daily-Checklist` repo (you can restrict it to just this repo).
+   - Pick the `Daily-Checklist` repo, branch `main`.
+   - Build settings: **Framework preset**: None. **Build command**:
+     leave empty. **Build output directory**: `public`.
+   - Deploy. Cloudflare gives you a URL like
+     `https://daily-checklist-xyz.pages.dev` — that's your app. Every
+     future `git push` to `main` redeploys it automatically.
 
-3. **Create a fine-grained personal access token** (this is what lets the
+3. **Create a fine-grained GitHub access token** (this is what lets the
    page save your changes as commits):
    - Go to https://github.com/settings/personal-access-tokens/new
    - **Repository access**: "Only select repositories" → choose
@@ -41,7 +50,8 @@ API — no server, no database, no paid plan.
      be able to see it again, so keep it somewhere safe until you paste it
      in the next step.
 
-4. **Open the Pages URL** from step 2. On first load it'll ask for:
+4. **Open the Cloudflare Pages URL** from step 2. On first load it'll ask
+   for:
    - GitHub username: `sarunstorepro`
    - Repo name: `Daily-Checklist`
    - Branch: `main`
@@ -57,7 +67,8 @@ API — no server, no database, no paid plan.
 
 ## Files
 
-- `index.html` — the whole app (HTML/CSS/JS, no build step, no dependencies).
+- `public/index.html` — the whole app (HTML/CSS/JS, no build step, no
+  dependencies). This is the only file Cloudflare Pages ever serves.
 - `data/tasks.json` — your live task list. Don't edit by hand while the app
   might also be writing to it — let the app own this file.
 - `data/archive/` — created automatically once anything is old enough to
@@ -65,5 +76,3 @@ API — no server, no database, no paid plan.
 - `scripts/archive_completed.py` + `.github/workflows/archive.yml` — the
   daily housekeeping job described above. You can trigger it manually from
   this repo's **Actions** tab if you ever want to run it early.
-- `_config.yml` — tells GitHub Pages' Jekyll build to leave `data/` and
-  `scripts/` out of the published site.
