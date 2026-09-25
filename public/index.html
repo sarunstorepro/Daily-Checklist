@@ -268,8 +268,9 @@
       headers: Object.assign({ 'Content-Type': 'application/json' }, authHeaders()),
       body: JSON.stringify(body)
     }).then(function (res) {
-      if (res.status === 409 && attempt < 1) {
-        // sha conflict - refetch latest sha and retry once
+      if (res.status === 409 && attempt < 3) {
+        // sha conflict - refetch latest sha and retry (a few times, in case of
+        // a stray in-flight write from another tab/reconnect settling out)
         return fetchRemote().then(function () { return writeRemote(newTasks, attempt + 1); });
       }
       if (!res.ok) {
