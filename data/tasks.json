@@ -43,10 +43,10 @@
     {
       "id": "mugl05hm4vxitc",
       "text": "Durkin security issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-25",
-      "completedOn": null
+      "completedOn": "2026-09-25"
     },
     {
       "id": "mugl0ebo6mqiv4",
