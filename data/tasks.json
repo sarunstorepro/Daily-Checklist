@@ -19,10 +19,10 @@
     {
       "id": "mugkzad9b0aup6",
       "text": "Task check Tickets",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-25",
-      "completedOn": null
+      "completedOn": "2026-09-25"
     },
     {
       "id": "mugkzfdtdgjbww",
