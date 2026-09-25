@@ -3,30 +3,55 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Daily Task Diary</title>
+<title>Daily Checklist</title>
 <style>
   :root {
-    --bg: #f6f3ec;
-    --paper: #fffdf8;
-    --ink: #2e2a24;
-    --ink-light: #766f61;
-    --line: #e4ddcc;
-    --accent: #b5562d;
-    --done: #6f8f5e;
-    --danger: #b5562d;
-    --shadow: 0 1px 3px rgba(46,42,36,0.08), 0 1px 2px rgba(46,42,36,0.06);
+    --bg: #f4f5f7;
+    --paper: #ffffff;
+    --ink: #1a1d23;
+    --ink-light: #6b7280;
+    --ink-faint: #9ca3af;
+    --line: #e5e7eb;
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --done: #16a34a;
+    --danger: #dc2626;
+    --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 1px 3px rgba(16,24,40,0.06);
+    --shadow-md: 0 4px 10px rgba(16,24,40,0.06), 0 2px 4px rgba(16,24,40,0.05);
+    --radius: 12px;
+
+    --p-urgent: #dc2626;
+    --p-urgent-bg: #fef2f2;
+    --p-high: #ea580c;
+    --p-high-bg: #fff7ed;
+    --p-medium: #2563eb;
+    --p-medium-bg: #eff6ff;
+    --p-low: #6b7280;
+    --p-low-bg: #f3f4f6;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1c1a17;
-      --paper: #26231f;
-      --ink: #ece7dc;
-      --ink-light: #a49b8a;
-      --line: #3a352d;
-      --accent: #e08b5e;
-      --done: #92b57e;
-      --danger: #e08b5e;
-      --shadow: 0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
+      --bg: #14161a;
+      --paper: #1e2127;
+      --ink: #f0f1f3;
+      --ink-light: #9aa1ad;
+      --ink-faint: #6b7280;
+      --line: #2d3138;
+      --accent: #818cf8;
+      --accent-soft: #262a45;
+      --done: #4ade80;
+      --danger: #f87171;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.25);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.3);
+
+      --p-urgent: #f87171;
+      --p-urgent-bg: #3a1f1f;
+      --p-high: #fb923c;
+      --p-high-bg: #3a2a1a;
+      --p-medium: #60a5fa;
+      --p-medium-bg: #1c2a42;
+      --p-low: #9aa1ad;
+      --p-low-bg: #262a30;
     }
   }
   * { box-sizing: border-box; }
@@ -36,62 +61,85 @@
     color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 16px 80px; }
-  header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
-  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; margin: 0; }
-  .today-date { color: var(--ink-light); font-size: 0.85rem; }
-  .tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid var(--line); align-items: center; }
-  .tab-btn { background: none; border: none; padding: 10px 14px; font-size: 0.92rem; color: var(--ink-light); cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
-  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 32px 16px 80px; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+  .title-block h1 { font-size: 1.4rem; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  .title-block .today-date { color: var(--ink-light); font-size: 0.85rem; margin-top: 2px; }
+
+  .tabs { display: flex; gap: 4px; margin-bottom: 18px; border-bottom: 1px solid var(--line); align-items: center; }
+  .tab-btn { background: none; border: none; padding: 10px 4px; margin-right: 18px; font-size: 0.9rem; font-weight: 600; color: var(--ink-light); cursor: pointer; border-bottom: 2px solid transparent; font-family: inherit; }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
   .spacer { flex: 1; }
-  .icon-btn { background: none; border: none; color: var(--ink-light); cursor: pointer; font-size: 1rem; padding: 6px 8px; }
-  .icon-btn:hover { color: var(--accent); }
-  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
-  .add-row { display: flex; gap: 8px; padding: 12px; }
-  .add-row input { flex: 1; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 7px; padding: 10px 12px; font-size: 0.95rem; font-family: inherit; }
-  .add-row input:focus { outline: none; border-color: var(--accent); }
-  .add-row button { background: var(--accent); color: #fff; border: none; border-radius: 7px; padding: 0 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
-  .add-row button:disabled { opacity: 0.5; cursor: default; }
-  .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-light); padding: 14px 14px 6px; display: flex; justify-content: space-between; }
-  ul.task-list { list-style: none; margin: 0; padding: 0 8px 10px; }
-  .task-item { display: flex; align-items: center; gap: 10px; padding: 9px 6px; border-bottom: 1px solid var(--line); }
+  .icon-btn { background: none; border: none; color: var(--ink-light); cursor: pointer; font-size: 1.05rem; padding: 6px 8px; border-radius: 8px; }
+  .icon-btn:hover { color: var(--accent); background: var(--accent-soft); }
+
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+
+  .add-row { display: flex; gap: 8px; padding: 14px; flex-wrap: wrap; }
+  .add-row input[type="text"] { flex: 1 1 180px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; padding: 11px 13px; font-size: 0.95rem; font-family: inherit; }
+  .add-row input[type="text"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .priority-select { border: 1.5px solid var(--line); background: var(--paper); border-radius: 8px; padding: 0 10px; font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+  .priority-select:focus { outline: none; }
+  .add-row button.add-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0 18px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+  .add-row button.add-btn:hover { filter: brightness(1.08); }
+
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-faint); font-weight: 700; padding: 14px 16px 6px; display: flex; justify-content: space-between; }
+  ul.task-list { list-style: none; margin: 0; padding: 0 0 8px; }
+  .task-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px 11px 12px; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; transition: background 0.12s ease; }
+  .task-item:hover { background: var(--bg); }
   .task-item:last-child { border-bottom: none; }
-  .check { width: 20px; height: 20px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--ink-light); cursor: pointer; display: flex; align-items: center; justify-content: center; background: transparent; }
+  .task-item.p-urgent { border-left-color: var(--p-urgent); }
+  .task-item.p-high { border-left-color: var(--p-high); }
+  .task-item.p-medium { border-left-color: var(--p-medium); }
+  .task-item.p-low { border-left-color: var(--p-low); }
+
+  .check { width: 21px; height: 21px; flex-shrink: 0; border-radius: 50%; border: 2px solid var(--ink-faint); cursor: pointer; display: flex; align-items: center; justify-content: center; background: transparent; padding: 0; }
   .check.checked { background: var(--done); border-color: var(--done); color: #fff; font-size: 12px; }
+
   .task-text { flex: 1; font-size: 0.95rem; word-break: break-word; }
-  .task-item.completed .task-text { text-decoration: line-through; color: var(--ink-light); }
-  .age-tag { font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 1px 7px; flex-shrink: 0; opacity: 0.85; }
-  .del-btn { background: none; border: none; color: var(--ink-light); cursor: pointer; font-size: 0.85rem; padding: 4px 6px; opacity: 0.6; }
-  .del-btn:hover { opacity: 1; color: var(--danger); }
-  .empty { padding: 26px 14px; text-align: center; color: var(--ink-light); font-size: 0.9rem; }
+  .task-item.completed .task-text { text-decoration: line-through; color: var(--ink-faint); }
+
+  .priority-badge { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; border-radius: 20px; padding: 3px 9px; flex-shrink: 0; cursor: pointer; border: none; white-space: nowrap; }
+  .priority-badge.p-urgent { color: var(--p-urgent); background: var(--p-urgent-bg); }
+  .priority-badge.p-high { color: var(--p-high); background: var(--p-high-bg); }
+  .priority-badge.p-medium { color: var(--p-medium); background: var(--p-medium-bg); }
+  .priority-badge.p-low { color: var(--p-low); background: var(--p-low-bg); }
+  .priority-badge:hover { filter: brightness(0.95); }
+  .priority-badge:disabled { cursor: default; opacity: 0.75; }
+
+  .age-tag { font-size: 0.68rem; color: var(--ink-faint); flex-shrink: 0; white-space: nowrap; }
+  .del-btn { background: none; border: none; color: var(--ink-faint); cursor: pointer; font-size: 0.9rem; padding: 4px 6px; border-radius: 6px; flex-shrink: 0; }
+  .del-btn:hover { color: var(--danger); background: var(--p-urgent-bg); }
+
+  .empty { padding: 30px 14px; text-align: center; color: var(--ink-faint); font-size: 0.9rem; }
   .stats { display: flex; gap: 14px; margin: 14px 2px 0; font-size: 0.8rem; color: var(--ink-light); }
-  .history-day { margin-bottom: 14px; }
-  .history-day h3 { font-family: Georgia, "Times New Roman", serif; font-size: 0.95rem; margin: 0 0 6px 2px; color: var(--ink); }
-  .history-day .count-tag { font-size: 0.72rem; color: var(--ink-light); font-weight: normal; margin-left: 6px; }
-  footer { text-align: center; color: var(--ink-light); font-size: 0.72rem; margin-top: 30px; }
-  footer a { color: var(--ink-light); }
+  .history-day { margin-bottom: 16px; }
+  .history-day h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 8px 2px; color: var(--ink); }
+  .history-day .count-tag { font-size: 0.72rem; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
+  footer { text-align: center; color: var(--ink-faint); font-size: 0.72rem; margin-top: 34px; }
 
   /* setup screen */
   .setup-wrap { max-width: 460px; margin: 60px auto; padding: 0 16px; }
-  .setup-wrap h1 { font-family: Georgia, serif; font-size: 1.4rem; margin-bottom: 4px; }
+  .setup-wrap h1 { font-size: 1.3rem; margin-bottom: 4px; font-weight: 700; }
   .setup-wrap p.lead { color: var(--ink-light); font-size: 0.9rem; margin-top: 0; }
   .field { margin-bottom: 14px; }
-  .field label { display: block; font-size: 0.8rem; color: var(--ink-light); margin-bottom: 5px; }
-  .field input { width: 100%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 7px; padding: 10px 12px; font-size: 0.92rem; font-family: inherit; }
-  .field input:focus { outline: none; border-color: var(--accent); }
-  .setup-wrap button.primary { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 7px; padding: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer; margin-top: 6px; }
-  .setup-wrap button.primary:disabled { opacity: 0.5; cursor: default; }
-  .help { font-size: 0.78rem; color: var(--ink-light); margin-top: 18px; line-height: 1.5; }
+  .field label { display: block; font-size: 0.8rem; color: var(--ink-light); margin-bottom: 5px; font-weight: 600; }
+  .field input { width: 100%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 8px; padding: 10px 12px; font-size: 0.92rem; font-family: inherit; }
+  .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .setup-wrap button.primary { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 0.95rem; font-weight: 700; cursor: pointer; margin-top: 6px; }
+  .setup-wrap button.primary:hover { filter: brightness(1.08); }
+  .help { font-size: 0.78rem; color: var(--ink-light); margin-top: 18px; line-height: 1.6; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
   .help a { color: var(--accent); }
-  .error-box { background: var(--accent); color: #fff; padding: 10px 14px; border-radius: 7px; font-size: 0.85rem; margin-bottom: 14px; }
+  .error-box { background: var(--p-urgent-bg); color: var(--p-urgent); padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 14px; font-weight: 600; }
   .status-line { font-size: 0.75rem; color: var(--ink-light); margin-top: 8px; min-height: 1em; }
 </style>
 </head>
 <body>
 
 <div id="setupScreen" class="setup-wrap" style="display:none;">
-  <h1>📔 Daily Task Diary</h1>
+  <h1>✅ Daily Checklist</h1>
   <p class="lead">One-time setup — connect this page to your private data repo on GitHub.</p>
   <div id="setupError"></div>
   <div class="field">
@@ -107,27 +155,26 @@
     <input id="cfgBranch" type="text" placeholder="main" value="main" />
   </div>
   <div class="field">
-    <label>Personal access token (fine-grained, Contents: Read & write, scoped to this repo only)</label>
-    <input id="cfgToken" type="password" placeholder="github_pat_..." />
+    <label>Personal access token (Contents: Read & write, scoped to this repo only)</label>
+    <input id="cfgToken" type="password" placeholder="ghp_... or github_pat_..." />
   </div>
   <button class="primary" id="cfgSaveBtn">Connect</button>
   <div class="status-line" id="setupStatus"></div>
   <div class="help">
     Need a token? On GitHub go to <strong>Settings → Developer settings →
-    Personal access tokens → Fine-grained tokens → Generate new token</strong>,
-    set <strong>Repository access</strong> to only this repo (Daily-Checklist), and under
-    <strong>Permissions → Repository permissions</strong> set
-    <strong>Contents</strong> to <strong>Read and write</strong>. The token is
-    saved only in this browser's local storage — it is never written
-    anywhere else.
+    Personal access tokens</strong>, create one scoped to this repo with
+    <strong>Contents: Read and write</strong>. The token is saved only in
+    this browser's local storage — it is never written anywhere else.
   </div>
 </div>
 
 <div id="app" style="display:none;">
 <div class="wrap">
   <header>
-    <h1>📔 Daily Task Diary</h1>
-    <div class="today-date" id="todayDate"></div>
+    <div class="title-block">
+      <h1>✅ Daily Checklist</h1>
+      <div class="today-date" id="todayDate"></div>
+    </div>
   </header>
 
   <div class="tabs">
@@ -142,7 +189,13 @@
     <div class="card">
       <div class="add-row">
         <input id="newTaskInput" type="text" placeholder="What do you need to do?" maxlength="300" />
-        <button id="addBtn">Add</button>
+        <select id="newTaskPriority" class="priority-select">
+          <option value="urgent">🔴 Urgent</option>
+          <option value="high">🟠 High</option>
+          <option value="medium" selected>🔵 Medium</option>
+          <option value="low">⚪ Low</option>
+        </select>
+        <button class="add-btn" id="addBtn">Add</button>
       </div>
       <div class="section-label"><span>Pending</span></div>
       <ul class="task-list" id="pendingList"></ul>
@@ -166,6 +219,9 @@
   var CONFIG_KEY = 'taskDiaryConfig';
   var API_ROOT = 'https://api.github.com';
   var DATA_PATH = 'data/tasks.json';
+  var PRIORITY_RANK = { urgent: 0, high: 1, medium: 2, low: 3 };
+  var PRIORITY_ORDER = ['urgent', 'high', 'medium', 'low'];
+  var PRIORITY_LABEL = { urgent: 'Urgent', high: 'High', medium: 'Medium', low: 'Low' };
 
   var config = null;         // {owner, repo, branch, token}
   var currentSha = null;     // sha of the currently loaded tasks.json, for safe writes
@@ -191,6 +247,9 @@
     return Math.round((db - da) / 86400000);
   }
   function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+  function normalizedPriority(t) {
+    return PRIORITY_RANK.hasOwnProperty(t.priority) ? t.priority : 'medium';
+  }
 
   // ---------- base64 helpers (utf-8 safe) ----------
   function utf8ToBase64(str) {
@@ -309,12 +368,17 @@
   // ---------- rendering ----------
   var today = todayStr();
 
+  function byPriorityThenAge(a, b) {
+    var pa = PRIORITY_RANK[normalizedPriority(a)], pb = PRIORITY_RANK[normalizedPriority(b)];
+    if (pa !== pb) return pa - pb;
+    return a.createdOn < b.createdOn ? -1 : (a.createdOn > b.createdOn ? 1 : 0);
+  }
+
   function render() {
     document.getElementById('todayDate').textContent = formatNice(today);
 
-    var pending = tasks.filter(function (t) { return t.status === 'pending'; })
-                        .sort(function (a, b) { return a.createdOn < b.createdOn ? -1 : 1; });
-    var completedToday = tasks.filter(function (t) { return t.status === 'completed' && t.completedOn === today; });
+    var pending = tasks.filter(function (t) { return t.status === 'pending'; }).sort(byPriorityThenAge);
+    var completedToday = tasks.filter(function (t) { return t.status === 'completed' && t.completedOn === today; }).sort(byPriorityThenAge);
 
     var pendingList = document.getElementById('pendingList');
     pendingList.innerHTML = '';
@@ -342,20 +406,31 @@
   }
 
   function taskRow(t, showAge) {
+    var priority = normalizedPriority(t);
     var li = document.createElement('li');
-    li.className = 'task-item' + (t.status === 'completed' ? ' completed' : '');
+    li.className = 'task-item p-' + priority + (t.status === 'completed' ? ' completed' : '');
 
     var check = document.createElement('button');
     check.className = 'check' + (t.status === 'completed' ? ' checked' : '');
     check.innerHTML = t.status === 'completed' ? '✓' : '';
     check.title = t.status === 'completed' ? 'Mark as pending' : 'Mark as done';
     check.addEventListener('click', function () { toggleComplete(t.id); });
+    li.appendChild(check);
+
+    var badge = document.createElement('button');
+    badge.className = 'priority-badge p-' + priority;
+    badge.textContent = PRIORITY_LABEL[priority];
+    badge.title = t.status === 'completed' ? '' : 'Click to change priority';
+    if (t.status === 'completed') {
+      badge.disabled = true;
+    } else {
+      badge.addEventListener('click', function () { cyclePriority(t.id); });
+    }
+    li.appendChild(badge);
 
     var text = document.createElement('span');
     text.className = 'task-text';
     text.textContent = t.text;
-
-    li.appendChild(check);
     li.appendChild(text);
 
     if (showAge && t.createdOn && t.createdOn !== today) {
@@ -404,7 +479,7 @@
       card.className = 'card';
       var ul = document.createElement('ul');
       ul.className = 'task-list';
-      byDate[d].forEach(function (t) { ul.appendChild(taskRow(t, false)); });
+      byDate[d].sort(byPriorityThenAge).forEach(function (t) { ul.appendChild(taskRow(t, false)); });
       card.appendChild(ul);
       wrap.appendChild(h3);
       wrap.appendChild(card);
@@ -413,10 +488,11 @@
   }
 
   // ---------- actions ----------
-  function addTask(text) {
+  function addTask(text, priority) {
     text = text.trim();
     if (!text) return;
-    tasks.push({ id: uid(), text: text, status: 'pending', createdOn: today, completedOn: null });
+    if (!PRIORITY_RANK.hasOwnProperty(priority)) priority = 'medium';
+    tasks.push({ id: uid(), text: text, status: 'pending', priority: priority, createdOn: today, completedOn: null });
     render();
     queueWrite();
   }
@@ -430,6 +506,14 @@
       t.status = 'pending';
       t.completedOn = null;
     }
+    render();
+    queueWrite();
+  }
+  function cyclePriority(id) {
+    var t = tasks.find(function (x) { return x.id === id; });
+    if (!t) return;
+    var idx = PRIORITY_ORDER.indexOf(normalizedPriority(t));
+    t.priority = PRIORITY_ORDER[(idx + 1) % PRIORITY_ORDER.length];
     render();
     queueWrite();
   }
@@ -451,7 +535,7 @@
     errBox.innerHTML = errorMsg ? '<div class="error-box">' + errorMsg + '</div>' : '';
     if (config) {
       document.getElementById('cfgOwner').value = config.owner || '';
-      document.getElementById('cfgRepo').value = config.repo || 'task-diary-data';
+      document.getElementById('cfgRepo').value = config.repo || 'Daily-Checklist';
       document.getElementById('cfgBranch').value = config.branch || 'main';
     }
   }
@@ -475,7 +559,7 @@
 
   document.getElementById('cfgSaveBtn').addEventListener('click', function () {
     var owner = document.getElementById('cfgOwner').value.trim();
-    var repo = document.getElementById('cfgRepo').value.trim() || 'task-diary-data';
+    var repo = document.getElementById('cfgRepo').value.trim() || 'Daily-Checklist';
     var branch = document.getElementById('cfgBranch').value.trim() || 'main';
     var token = document.getElementById('cfgToken').value.trim();
     if (!owner || !token) {
@@ -500,7 +584,8 @@
 
   document.getElementById('addBtn').addEventListener('click', function () {
     var input = document.getElementById('newTaskInput');
-    addTask(input.value);
+    var prioritySelect = document.getElementById('newTaskPriority');
+    addTask(input.value, prioritySelect.value);
     input.value = '';
     input.focus();
   });
