@@ -147,10 +147,10 @@
     {
       "id": "mukttqyu4v3rr9",
       "text": "Ticket check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-28",
-      "completedOn": null
+      "completedOn": "2026-09-28"
     },
     {
       "id": "mukttyt6panz5t",
