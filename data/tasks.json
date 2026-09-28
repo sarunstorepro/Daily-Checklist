@@ -139,10 +139,10 @@
     {
       "id": "mukttnwtmtno97",
       "text": "Send a followup email to laura",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-28",
-      "completedOn": null
+      "completedOn": "2026-09-28"
     },
     {
       "id": "mukttqyu4v3rr9",
