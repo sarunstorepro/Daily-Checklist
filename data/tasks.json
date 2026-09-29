@@ -203,10 +203,10 @@
     {
       "id": "mum85w1voei41e",
       "text": "NEB Dev check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": null
+      "completedOn": "2026-09-29"
     },
     {
       "id": "mum85zb6na67fv",
