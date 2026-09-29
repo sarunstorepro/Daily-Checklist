@@ -291,10 +291,10 @@
     {
       "id": "mumgd9hv3med29",
       "text": "FHD image check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": null
+      "completedOn": "2026-09-29"
     }
   ]
 }
