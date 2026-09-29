@@ -251,10 +251,10 @@
     {
       "id": "mum87a75qusnsm",
       "text": "Intusion check and reply to customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": null
+      "completedOn": "2026-09-29"
     },
     {
       "id": "mum88360rvboi7",
