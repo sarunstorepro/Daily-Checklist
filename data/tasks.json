@@ -283,10 +283,10 @@
     {
       "id": "mumfyw5nvyjbqx",
       "text": "PCE new task check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": null
+      "completedOn": "2026-09-29"
     }
   ]
 }
