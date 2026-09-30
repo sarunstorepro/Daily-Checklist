@@ -403,10 +403,10 @@
     {
       "id": "mununrkp3jx0wz",
       "text": "Check manuftaure website",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-09-30",
-      "completedOn": null
+      "completedOn": "2026-09-30"
     },
     {
       "id": "mununwqhcbdnql",
