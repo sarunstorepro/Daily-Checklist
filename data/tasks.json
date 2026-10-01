@@ -483,10 +483,10 @@
     {
       "id": "mup4qsdllgtfg8",
       "text": "cusor subscription cancel",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-10-01",
-      "completedOn": null
+      "completedOn": "2026-10-01"
     }
   ]
 }
