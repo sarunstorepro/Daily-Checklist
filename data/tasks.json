@@ -363,10 +363,10 @@
     {
       "id": "muntnhs5umhvtj",
       "text": "Oct 2 leave announce",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-30",
-      "completedOn": null
+      "completedOn": "2026-10-01"
     },
     {
       "id": "muntnp9tr2bk8h",
