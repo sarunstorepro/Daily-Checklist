@@ -315,10 +315,10 @@
     {
       "id": "mump5n1uki2r17",
       "text": "Apply pranav leave",
-      "status": "completed",
+      "status": "pending",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "mumrxw62r7oswc",
@@ -326,7 +326,7 @@
       "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-09-29",
-      "completedOn": "2026-10-01"
+      "completedOn": "2026-10-05"
     },
     {
       "id": "mumry37uv27bdl",
@@ -347,10 +347,10 @@
     {
       "id": "muntmdzoz61l2l",
       "text": "Beeveryehwere arkida feed task check",
-      "status": "completed",
+      "status": "pending",
       "priority": "medium",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "muntmsiudha9cx",
@@ -363,10 +363,10 @@
     {
       "id": "muntnhs5umhvtj",
       "text": "Oct 2 leave announce",
-      "status": "completed",
+      "status": "pending",
       "priority": "medium",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "muntnp9tr2bk8h",
@@ -427,18 +427,18 @@
     {
       "id": "munw6r3lebjxhj",
       "text": "FHD update with nigel",
-      "status": "completed",
+      "status": "pending",
       "priority": "urgent",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "munzf4b331z413",
       "text": "info nigel ammoseek moved to live",
-      "status": "completed",
+      "status": "pending",
       "priority": "urgent",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "muo0n2pu4wi1ld",
@@ -459,10 +459,10 @@
     {
       "id": "muo0ogfkgoc07k",
       "text": "Wave API issue",
-      "status": "completed",
+      "status": "pending",
       "priority": "urgent",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     },
     {
       "id": "muo0okal0qp8d0",
@@ -475,18 +475,10 @@
     {
       "id": "muo1jnyuyeb5lw",
       "text": "QA time increase issue check",
-      "status": "completed",
+      "status": "pending",
       "priority": "urgent",
       "createdOn": "2026-09-30",
-      "completedOn": "2026-10-01"
-    },
-    {
-      "id": "mup4qsdllgtfg8",
-      "text": "cusor subscription cancel",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-10-01",
-      "completedOn": "2026-10-01"
+      "completedOn": null
     }
   ]
 }
