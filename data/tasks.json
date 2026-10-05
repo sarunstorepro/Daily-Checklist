@@ -211,10 +211,10 @@
     {
       "id": "mum85zb6na67fv",
       "text": "PCE check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-29",
-      "completedOn": null
+      "completedOn": "2026-10-05"
     },
     {
       "id": "mum86btxhx20t0",
