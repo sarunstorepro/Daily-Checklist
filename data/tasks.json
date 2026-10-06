@@ -559,6 +559,14 @@
       "priority": "urgent",
       "createdOn": "2026-10-06",
       "completedOn": null
+    },
+    {
+      "id": "muwndbh25kuc5u",
+      "text": "AI Team meeting",
+      "status": "pending",
+      "priority": "high",
+      "createdOn": "2026-10-06",
+      "completedOn": null
     }
   ]
 }
