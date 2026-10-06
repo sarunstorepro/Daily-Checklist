@@ -292,7 +292,7 @@
   }
 
   function fetchRemote() {
-    return fetch(apiUrl(), { headers: authHeaders() }).then(function (res) {
+    return fetch(apiUrl(), { headers: authHeaders(), cache: 'no-store' }).then(function (res) {
       if (res.status === 404) {
         // file doesn't exist yet - start empty, create it on first save
         currentSha = null;
