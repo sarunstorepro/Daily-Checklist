@@ -627,10 +627,10 @@
     {
       "id": "muxnr7rauq17mz",
       "text": "Check Jafar message and give reply to him",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-07",
-      "completedOn": null
+      "completedOn": "2026-10-07"
     },
     {
       "id": "muxnrhx1b01dhd",
