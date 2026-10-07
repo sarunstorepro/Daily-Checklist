@@ -659,10 +659,10 @@
     {
       "id": "muxnyhbuggkrnt",
       "text": "Check stone task on live",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-07",
-      "completedOn": null
+      "completedOn": "2026-10-07"
     },
     {
       "id": "muxqbsvkzfw85p",
