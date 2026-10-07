@@ -635,10 +635,10 @@
     {
       "id": "muxnrhx1b01dhd",
       "text": "Assign stone task to pranav and complete on live",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-07",
-      "completedOn": null
+      "completedOn": "2026-10-07"
     },
     {
       "id": "muxnsnolqkdpsx",
