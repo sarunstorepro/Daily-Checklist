@@ -691,10 +691,10 @@
     {
       "id": "muxwix71a1qeji",
       "text": "check irfan mesage and send reply ?",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-07",
-      "completedOn": null
+      "completedOn": "2026-10-07"
     },
     {
       "id": "muy192g9pokakd",
