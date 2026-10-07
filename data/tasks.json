@@ -619,10 +619,10 @@
     {
       "id": "muxnqv9ne6ug5r",
       "text": "Reply to SOS",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-10-07",
-      "completedOn": null
+      "completedOn": "2026-10-07"
     },
     {
       "id": "muxnr7rauq17mz",
