@@ -739,10 +739,10 @@
     {
       "id": "muz8c54py6t6ts",
       "text": "Beverwhere check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-08",
-      "completedOn": null
+      "completedOn": "2026-10-08"
     }
   ]
 }
