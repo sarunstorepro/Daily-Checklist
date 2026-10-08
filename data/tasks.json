@@ -715,10 +715,10 @@
     {
       "id": "muz5vxgu1fzng6",
       "text": "Beverywhere check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-10-08",
-      "completedOn": null
+      "completedOn": "2026-10-08"
     },
     {
       "id": "muz8bvtk4ju1n9",
