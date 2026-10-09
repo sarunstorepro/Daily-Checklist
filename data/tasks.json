@@ -795,10 +795,10 @@
     {
       "id": "mv0kdo7ly4ptv0",
       "text": "beverywhere check",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-09",
-      "completedOn": null
+      "completedOn": "2026-10-09"
     },
     {
       "id": "mv0ndn6ij7sptq",
