@@ -883,10 +883,10 @@
     {
       "id": "mv5ajvbxdk5z3e",
       "text": "beverwhwere check",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-12",
-      "completedOn": null
+      "completedOn": "2026-10-12"
     }
   ]
 }
