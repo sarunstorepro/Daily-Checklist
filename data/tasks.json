@@ -851,10 +851,10 @@
     {
       "id": "mv50msoikr6tye",
       "text": "PCE check and update with customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-12",
-      "completedOn": null
+      "completedOn": "2026-10-12"
     },
     {
       "id": "mv50zo5fwytblb",
