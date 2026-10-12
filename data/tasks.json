@@ -867,10 +867,10 @@
     {
       "id": "mv56fe206cjmiu",
       "text": "Replay to medicare",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-12",
-      "completedOn": null
+      "completedOn": "2026-10-12"
     },
     {
       "id": "mv56tun7a9x8ex",
