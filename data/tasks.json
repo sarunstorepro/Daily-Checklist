@@ -859,10 +859,10 @@
     {
       "id": "mv50zo5fwytblb",
       "text": "check artlandish monthly update task",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-12",
-      "completedOn": null
+      "completedOn": "2026-10-12"
     }
   ]
 }
