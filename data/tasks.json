@@ -891,10 +891,10 @@
     {
       "id": "mv68b74ed4guvz",
       "text": "Peak website access issue 72102",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     },
     {
       "id": "mv68mnsgg3cmfh",
