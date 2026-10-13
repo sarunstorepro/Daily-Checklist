@@ -1003,10 +1003,10 @@
     {
       "id": "mv6lk486kui8og",
       "text": "medicacre website changes check",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     }
   ]
 }
