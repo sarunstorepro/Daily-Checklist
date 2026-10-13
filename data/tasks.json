@@ -939,10 +939,10 @@
     {
       "id": "mv68p0g6noqidi",
       "text": "ADA issue for FM check and assign task with team",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     },
     {
       "id": "mv68p8r203yan5",
