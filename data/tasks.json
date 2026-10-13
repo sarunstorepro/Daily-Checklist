@@ -899,10 +899,10 @@
     {
       "id": "mv68mnsgg3cmfh",
       "text": "PCE check latest reply and reply to customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     },
     {
       "id": "mv68n4uyhfvwul",
