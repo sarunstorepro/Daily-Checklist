@@ -907,10 +907,10 @@
     {
       "id": "mv68n4uyhfvwul",
       "text": "PCE product filter task check and assign with team",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     },
     {
       "id": "mv68nofoxprylc",
