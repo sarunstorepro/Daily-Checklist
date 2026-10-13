@@ -995,10 +995,10 @@
     {
       "id": "mv6jzsqdcz9dj8",
       "text": "PCE new task assign once its completed check and inform customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-10-13"
     },
     {
       "id": "mv6lk486kui8og",
