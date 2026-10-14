@@ -1075,10 +1075,10 @@
     {
       "id": "mv81gasjgo78xy",
       "text": "Boxedtech issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-14",
-      "completedOn": null
+      "completedOn": "2026-10-14"
     }
   ]
 }
