@@ -1051,10 +1051,10 @@
     {
       "id": "mv7paqgrnk4pqk",
       "text": "Reimbursment logs update",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-14",
-      "completedOn": null
+      "completedOn": "2026-10-14"
     },
     {
       "id": "mv7qqu9tpkyjse",
