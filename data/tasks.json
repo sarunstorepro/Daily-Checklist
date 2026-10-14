@@ -1043,10 +1043,10 @@
     {
       "id": "mv7pabcb5s6b25",
       "text": "Cloudways API key depercated check with server team",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-14",
-      "completedOn": null
+      "completedOn": "2026-10-14"
     },
     {
       "id": "mv7paqgrnk4pqk",
