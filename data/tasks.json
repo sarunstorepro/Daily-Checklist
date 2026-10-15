@@ -1147,10 +1147,10 @@
     {
       "id": "mv98zfp7n204fs",
       "text": "PCE new task check asana",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-15",
-      "completedOn": null
+      "completedOn": "2026-10-15"
     }
   ]
 }
