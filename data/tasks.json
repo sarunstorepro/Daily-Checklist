@@ -1131,10 +1131,10 @@
     {
       "id": "mv95boj2oij7vu",
       "text": "FHD move live",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-15",
-      "completedOn": null
+      "completedOn": "2026-10-15"
     },
     {
       "id": "mv986hog4o9z7k",
