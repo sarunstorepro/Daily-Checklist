@@ -1103,6 +1103,14 @@
       "priority": "urgent",
       "createdOn": "2026-10-15",
       "completedOn": null
+    },
+    {
+      "id": "mv94aqqp8dpn4t",
+      "text": "Stone registrtaion issue assign with team",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-10-15",
+      "completedOn": null
     }
   ]
 }
