@@ -1099,10 +1099,10 @@
     {
       "id": "mv949754xo5vla",
       "text": "Stone urgent issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-15",
-      "completedOn": null
+      "completedOn": "2026-10-15"
     },
     {
       "id": "mv94aqqp8dpn4t",
