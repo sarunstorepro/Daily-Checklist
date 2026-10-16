@@ -1203,10 +1203,10 @@
     {
       "id": "mval67ggyghghl",
       "text": "PCE check and update to customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-16",
-      "completedOn": null
+      "completedOn": "2026-10-16"
     },
     {
       "id": "mval8tkaw0784d",
