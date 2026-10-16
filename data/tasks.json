@@ -1211,10 +1211,10 @@
     {
       "id": "mval8tkaw0784d",
       "text": "contact rack space team about security issue",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-16",
-      "completedOn": null
+      "completedOn": "2026-10-16"
     }
   ]
 }
