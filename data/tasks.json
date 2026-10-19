@@ -1267,10 +1267,10 @@
     {
       "id": "mvezmkesle8a50",
       "text": "intusion shipstation task work",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-19",
-      "completedOn": null
+      "completedOn": "2026-10-19"
     }
   ]
 }
