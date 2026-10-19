@@ -1259,10 +1259,10 @@
     {
       "id": "mvezlvs991aekc",
       "text": "Server PHP update task create",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-19",
-      "completedOn": null
+      "completedOn": "2026-10-19"
     }
   ]
 }
