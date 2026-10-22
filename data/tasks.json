@@ -1323,10 +1323,10 @@
     {
       "id": "mvj3tyjayk0ksi",
       "text": "FHD new task reply check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     },
     {
       "id": "mvj3u98wmpg2os",
