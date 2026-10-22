@@ -1283,10 +1283,10 @@
     {
       "id": "mvj3gv6g4nsn9a",
       "text": "Check all tickets",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     },
     {
       "id": "mvj3h47zgasciw",
