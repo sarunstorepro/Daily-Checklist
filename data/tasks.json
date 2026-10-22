@@ -1347,10 +1347,10 @@
     {
       "id": "mvj3v1r31yf350",
       "text": "PCE new dev site create",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     },
     {
       "id": "mvj3y0v4y42w08",
