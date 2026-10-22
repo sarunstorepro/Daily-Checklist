@@ -1379,10 +1379,10 @@
     {
       "id": "mvj6u5dblbp1oq",
       "text": "Email to all customers about PHP security issue",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     }
   ]
 }
