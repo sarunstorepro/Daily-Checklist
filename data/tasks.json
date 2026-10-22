@@ -1299,10 +1299,10 @@
     {
       "id": "mvj3n1nc9r32i1",
       "text": "check asana",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     },
     {
       "id": "mvj3nbr2u522zf",
