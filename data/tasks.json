@@ -1363,10 +1363,10 @@
     {
       "id": "mvj5y21gvpav7p",
       "text": "intsusion 71973",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-22",
-      "completedOn": null
+      "completedOn": "2026-10-22"
     }
   ]
 }
