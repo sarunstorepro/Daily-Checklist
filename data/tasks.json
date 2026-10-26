@@ -1519,6 +1519,14 @@
       "priority": "medium",
       "createdOn": "2026-10-26",
       "completedOn": "2026-10-26"
+    },
+    {
+      "id": "mvovfg1q4jzh6k",
+      "text": "Freshdesk API key",
+      "status": "pending",
+      "priority": "medium",
+      "createdOn": "2026-10-26",
+      "completedOn": null
     }
   ]
 }
