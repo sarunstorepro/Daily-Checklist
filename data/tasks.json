@@ -1475,18 +1475,18 @@
     {
       "id": "mvot7k3sa8cn2e",
       "text": "Intusion urgent task check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-26",
-      "completedOn": null
+      "completedOn": "2026-10-26"
     },
     {
       "id": "mvot7wmzvdlygh",
       "text": "for intusion update with Jafar on wph channel",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-26",
-      "completedOn": null
+      "completedOn": "2026-10-26"
     },
     {
       "id": "mvot7zy2ndcifj",
