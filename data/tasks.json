@@ -1531,10 +1531,10 @@
     {
       "id": "mvq8t8yijcuyls",
       "text": "Freshdesk API key resetting",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-26",
-      "completedOn": null
+      "completedOn": "2026-10-27"
     },
     {
       "id": "mvq90ynazxck0v",
