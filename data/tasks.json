@@ -1559,6 +1559,14 @@
       "priority": "urgent",
       "createdOn": "2026-10-27",
       "completedOn": null
+    },
+    {
+      "id": "mvq927pis2i0fg",
+      "text": "Stone check and confirm jafar investigation assign to team members",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-10-27",
+      "completedOn": null
     }
   ]
 }
