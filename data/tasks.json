@@ -1611,10 +1611,10 @@
     {
       "id": "mvqdkru57mct2q",
       "text": "intusion 72525 reply",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-27",
-      "completedOn": null
+      "completedOn": "2026-10-27"
     }
   ]
 }
