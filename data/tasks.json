@@ -1587,10 +1587,10 @@
     {
       "id": "mvq9vf2o1r69g7",
       "text": "rootsite new dev check and update",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-27",
-      "completedOn": null
+      "completedOn": "2026-10-27"
     },
     {
       "id": "mvq9vlfvmkg3va",
