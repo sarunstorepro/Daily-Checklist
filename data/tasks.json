@@ -1547,10 +1547,10 @@
     {
       "id": "mvq915lcjsm077",
       "text": "Intusion Shipstation issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-27",
-      "completedOn": null
+      "completedOn": "2026-10-27"
     },
     {
       "id": "mvq91rsm1o7p7u",
