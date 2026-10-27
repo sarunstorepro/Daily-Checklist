@@ -1599,6 +1599,14 @@
       "priority": "urgent",
       "createdOn": "2026-10-27",
       "completedOn": null
+    },
+    {
+      "id": "mvqaomupaqibpe",
+      "text": "Move lead generator AI to our railway account",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-10-27",
+      "completedOn": null
     }
   ]
 }
