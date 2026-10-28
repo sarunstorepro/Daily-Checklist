@@ -1563,10 +1563,10 @@
     {
       "id": "mvrns9s0edpe1u",
       "text": "FM issue check and update via channel",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-28",
-      "completedOn": null
+      "completedOn": "2026-10-28"
     },
     {
       "id": "mvrnsmvfeosb0h",
