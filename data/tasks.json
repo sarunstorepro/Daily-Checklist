@@ -1531,10 +1531,10 @@
     {
       "id": "mvrnr66o1pljdn",
       "text": "intusion shipstation urgent check and update with customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-28",
-      "completedOn": null
+      "completedOn": "2026-10-28"
     },
     {
       "id": "mvrnrh32xjq5oi",
