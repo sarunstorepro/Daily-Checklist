@@ -1679,6 +1679,14 @@
       "priority": "urgent",
       "createdOn": "2026-10-29",
       "completedOn": "2026-10-29"
+    },
+    {
+      "id": "mvtkneky6pricz",
+      "text": "Check Freshdesk MCP and connect and test",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-10-29",
+      "completedOn": null
     }
   ]
 }
