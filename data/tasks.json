@@ -1643,10 +1643,10 @@
     {
       "id": "mvt4ajeo9qsbfw",
       "text": "Stone message check and update with customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-29",
-      "completedOn": null
+      "completedOn": "2026-10-29"
     }
   ]
 }
