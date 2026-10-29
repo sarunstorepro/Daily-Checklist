@@ -1611,10 +1611,10 @@
     {
       "id": "mvt45cdqkrrbv8",
       "text": "Check PHP upgrade task",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-29",
-      "completedOn": null
+      "completedOn": "2026-10-29"
     },
     {
       "id": "mvt45j09qehv84",
