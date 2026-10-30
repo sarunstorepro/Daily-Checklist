@@ -1683,10 +1683,10 @@
     {
       "id": "mvtkneky6pricz",
       "text": "Check Freshdesk MCP and connect and test",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-29",
-      "completedOn": null
+      "completedOn": "2026-10-30"
     },
     {
       "id": "mvtkntfjd2alfp",
