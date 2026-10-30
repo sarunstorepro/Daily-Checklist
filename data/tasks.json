@@ -1755,10 +1755,10 @@
     {
       "id": "mvumllfn270ot6",
       "text": "Commonground check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-10-30",
-      "completedOn": null
+      "completedOn": "2026-10-30"
     }
   ]
 }
