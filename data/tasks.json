@@ -17,12 +17,84 @@
       "completedOn": "2026-09-29"
     },
     {
+      "id": "mugw95pnrfr8qj",
+      "text": "FHD check",
+      "status": "completed",
+      "priority": "urgent",
+      "createdOn": "2026-09-25",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "mugw9chhn5ffl1",
+      "text": "FHD new ticket check and assign",
+      "status": "completed",
+      "priority": "urgent",
+      "createdOn": "2026-09-25",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "mukttnwtmtno97",
+      "text": "Send a followup email to laura",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "mukttqyu4v3rr9",
+      "text": "Ticket check",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "mukttyt6panz5t",
+      "text": "Scott check WPSSO issue",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "muktu77qk31xk6",
+      "text": "Soctt Spam user issue check and update samad",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "muktujmswhmajs",
+      "text": "AE manufature website setup",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
       "id": "mukubkva4zlrhk",
       "text": "Create task for Scott Speed issue on asana",
       "status": "completed",
       "priority": "medium",
       "createdOn": "2026-09-28",
       "completedOn": "2026-10-12"
+    },
+    {
+      "id": "mukxtffos69kwp",
+      "text": "zoho shipstaion flow issue check",
+      "status": "completed",
+      "priority": "urgent",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
+    },
+    {
+      "id": "mul8f09pr1hv3g",
+      "text": "AE manufature site move and updat dns",
+      "status": "completed",
+      "priority": "medium",
+      "createdOn": "2026-09-28",
+      "completedOn": "2026-09-28"
     },
     {
       "id": "mum85w1voei41e",
@@ -1627,6 +1699,14 @@
     {
       "id": "mvtko5h53rqkcm",
       "text": "clude skill",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-10-29",
+      "completedOn": null
+    },
+    {
+      "id": "mvujazt1p96z9u",
+      "text": "Github central location update with nigel",
       "status": "pending",
       "priority": "urgent",
       "createdOn": "2026-10-29",
