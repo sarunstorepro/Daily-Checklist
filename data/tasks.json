@@ -1803,10 +1803,10 @@
     {
       "id": "mvz0a56ic2c2io",
       "text": "Peak check and send reply to customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-11-02",
-      "completedOn": null
+      "completedOn": "2026-11-02"
     }
   ]
 }
