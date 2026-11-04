@@ -1847,6 +1847,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-02",
       "completedOn": null
+    },
+    {
+      "id": "mw1op2jggws3w1",
+      "text": "Intusion COGS check and update with Nigel",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-11-02",
+      "completedOn": null
     }
   ]
 }
