@@ -1923,10 +1923,10 @@
     {
       "id": "mw1vcrg9jlpq7n",
       "text": "Arkida import check with pranav",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-11-04",
-      "completedOn": null
+      "completedOn": "2026-11-04"
     }
   ]
 }
