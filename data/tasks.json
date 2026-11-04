@@ -1891,10 +1891,10 @@
     {
       "id": "mw1pfpwjf9unef",
       "text": "scott Triple Whale security",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-11-04",
-      "completedOn": null
+      "completedOn": "2026-11-04"
     }
   ]
 }
