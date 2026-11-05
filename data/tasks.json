@@ -1711,6 +1711,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-05",
       "completedOn": "2026-11-05"
+    },
+    {
+      "id": "mw3ev4wdlnixva",
+      "text": "soctt GTM plugin update task",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-11-05",
+      "completedOn": null
     }
   ]
 }
