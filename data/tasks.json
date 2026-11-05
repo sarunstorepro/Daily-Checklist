@@ -9,60 +9,12 @@
       "completedOn": "2026-10-12"
     },
     {
-      "id": "mum85zb6na67fv",
-      "text": "PCE check",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-09-29",
-      "completedOn": "2026-10-05"
-    },
-    {
-      "id": "mump5n1uki2r17",
-      "text": "Apply pranav leave",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-09-29",
-      "completedOn": "2026-10-05"
-    },
-    {
-      "id": "mumrxw62r7oswc",
-      "text": "Neb development",
-      "status": "completed",
-      "priority": "urgent",
-      "createdOn": "2026-09-29",
-      "completedOn": "2026-10-05"
-    },
-    {
       "id": "mumry37uv27bdl",
       "text": "Beverehwere feed import task",
       "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-09-29",
       "completedOn": "2026-10-06"
-    },
-    {
-      "id": "muntmdzoz61l2l",
-      "text": "Beeveryehwere arkida feed task check",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-09-30",
-      "completedOn": "2026-10-05"
-    },
-    {
-      "id": "muntnhs5umhvtj",
-      "text": "Oct 2 leave announce",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-09-30",
-      "completedOn": "2026-10-05"
-    },
-    {
-      "id": "muntnp9tr2bk8h",
-      "text": "PCE lastest reply check",
-      "status": "completed",
-      "priority": "medium",
-      "createdOn": "2026-09-30",
-      "completedOn": "2026-10-05"
     },
     {
       "id": "munw6r3lebjxhj",
