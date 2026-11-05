@@ -1715,10 +1715,10 @@
     {
       "id": "mw3ev4wdlnixva",
       "text": "soctt GTM plugin update task",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-05",
-      "completedOn": null
+      "completedOn": "2026-11-05"
     }
   ]
 }
