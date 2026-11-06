@@ -1691,10 +1691,10 @@
     {
       "id": "mw4iw3qe9jwcuw",
       "text": "reply to freshdesk ticket",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-11-06",
-      "completedOn": null
+      "completedOn": "2026-11-06"
     },
     {
       "id": "mw4lwq8dowufi1",
