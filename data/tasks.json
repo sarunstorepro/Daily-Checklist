@@ -1731,10 +1731,10 @@
     {
       "id": "mw4q4b0lixg7f2",
       "text": "PHP update 8.3",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-11-06",
-      "completedOn": null
+      "completedOn": "2026-11-06"
     }
   ]
 }
