@@ -1699,10 +1699,10 @@
     {
       "id": "mw4lwq8dowufi1",
       "text": "Check Peak urgent issue related to Square",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-06",
-      "completedOn": null
+      "completedOn": "2026-11-06"
     },
     {
       "id": "mw4lwwdlkf16os",
