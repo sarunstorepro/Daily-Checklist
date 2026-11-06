@@ -1687,6 +1687,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-05",
       "completedOn": null
+    },
+    {
+      "id": "mw4iw3qe9jwcuw",
+      "text": "reply to freshdesk ticket",
+      "status": "pending",
+      "priority": "medium",
+      "createdOn": "2026-11-06",
+      "completedOn": null
     }
   ]
 }
