@@ -1347,10 +1347,10 @@
     {
       "id": "mw4lx7fvpusxha",
       "text": "Inusion Shipstation task",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-06",
-      "completedOn": null
+      "completedOn": "2026-11-11"
     },
     {
       "id": "mw4q45nqqiamqk",
