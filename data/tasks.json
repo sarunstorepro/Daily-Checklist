@@ -1379,10 +1379,10 @@
     {
       "id": "mwbr0emj3ryun3",
       "text": "PCE check and update with team",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-11",
-      "completedOn": null
+      "completedOn": "2026-11-11"
     },
     {
       "id": "mwbr14crmii1u9",
