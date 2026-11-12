@@ -1427,10 +1427,10 @@
     {
       "id": "mwd753zswb74ai",
       "text": "check bevreyr where urget ticket and once team member changed send reply",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-11",
-      "completedOn": null
+      "completedOn": "2026-11-11"
     }
   ]
 }
