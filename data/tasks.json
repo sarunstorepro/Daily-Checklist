@@ -1435,10 +1435,10 @@
     {
       "id": "mwd9dnwkwg48tl",
       "text": "botanical garden issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-12",
-      "completedOn": null
+      "completedOn": "2026-11-12"
     },
     {
       "id": "mwd9due0sh3tc4",
