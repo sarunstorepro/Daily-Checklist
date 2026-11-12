@@ -1403,10 +1403,10 @@
     {
       "id": "mwd5kkworxj4va",
       "text": "Create task for FHD and assign",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-11",
-      "completedOn": null
+      "completedOn": "2026-11-11"
     }
   ]
 }
