@@ -1407,6 +1407,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-13",
       "completedOn": null
+    },
+    {
+      "id": "mwelfff029voho",
+      "text": "worn plugin security issue fix",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-11-13",
+      "completedOn": null
     }
   ]
 }
