@@ -1395,10 +1395,10 @@
     {
       "id": "mwel7fdcxupe74",
       "text": "commonground check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-13",
-      "completedOn": null
+      "completedOn": "2026-11-13"
     },
     {
       "id": "mwel7oafl9ljg8",
