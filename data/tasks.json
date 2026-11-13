@@ -1363,10 +1363,10 @@
     {
       "id": "mwd9due0sh3tc4",
       "text": "outage notifications",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-12",
-      "completedOn": null
+      "completedOn": "2026-11-13"
     },
     {
       "id": "mwel5ty6601iex",
