@@ -1403,10 +1403,10 @@
     {
       "id": "mwel7oafl9ljg8",
       "text": "FHD task check and update with team",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-13",
-      "completedOn": null
+      "completedOn": "2026-11-13"
     },
     {
       "id": "mwelfff029voho",
