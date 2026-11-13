@@ -1371,10 +1371,10 @@
     {
       "id": "mwel5ty6601iex",
       "text": "BWG attack issue check",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-13",
-      "completedOn": null
+      "completedOn": "2026-11-13"
     },
     {
       "id": "mwel601l9x8x27",
