@@ -1103,6 +1103,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-19",
       "completedOn": null
+    },
+    {
+      "id": "mwnhqzpmvkc0tn",
+      "text": "Apply pranav leave and ahana",
+      "status": "pending",
+      "priority": "medium",
+      "createdOn": "2026-11-19",
+      "completedOn": null
     }
   ]
 }
