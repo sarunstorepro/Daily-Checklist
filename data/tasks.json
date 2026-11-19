@@ -1075,10 +1075,10 @@
     {
       "id": "mwnbyq5clt7tow",
       "text": "check ticket 73751",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-11-19",
-      "completedOn": null
+      "completedOn": "2026-11-19"
     }
   ]
 }
