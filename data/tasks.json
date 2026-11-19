@@ -19,10 +19,10 @@
     {
       "id": "mv69a94qt5eblp",
       "text": "Contact cleaning team",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "createdOn": "2026-10-13",
-      "completedOn": null
+      "completedOn": "2026-11-19"
     },
     {
       "id": "mv69ahds4v5i17",
@@ -1043,10 +1043,10 @@
     {
       "id": "mwelfff029voho",
       "text": "worn plugin security issue fix",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-13",
-      "completedOn": null
+      "completedOn": "2026-11-19"
     }
   ]
 }
