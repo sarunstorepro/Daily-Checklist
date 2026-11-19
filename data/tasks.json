@@ -1047,6 +1047,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-13",
       "completedOn": "2026-11-19"
+    },
+    {
+      "id": "mwnbobgeglcxbu",
+      "text": "artisan 73733",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-11-19",
+      "completedOn": null
     }
   ]
 }
