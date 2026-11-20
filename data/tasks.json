@@ -1099,10 +1099,10 @@
     {
       "id": "mwnhqkpuuglhkt",
       "text": "drukin reply",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-19",
-      "completedOn": null
+      "completedOn": "2026-11-19"
     },
     {
       "id": "mwnhqzpmvkc0tn",
