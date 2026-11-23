@@ -1075,10 +1075,10 @@
     {
       "id": "mwsz28gdbv1m01",
       "text": "Reply to 73950",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-23",
-      "completedOn": null
+      "completedOn": "2026-11-23"
     }
   ]
 }
