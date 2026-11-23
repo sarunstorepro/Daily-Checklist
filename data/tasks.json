@@ -1023,6 +1023,14 @@
       "priority": "urgent",
       "createdOn": "2026-11-23",
       "completedOn": null
+    },
+    {
+      "id": "mwsv0olzereegw",
+      "text": "MWP vs Cloudways plugin updates and secuirty update check and update on channel",
+      "status": "pending",
+      "priority": "urgent",
+      "createdOn": "2026-11-23",
+      "completedOn": null
     }
   ]
 }
