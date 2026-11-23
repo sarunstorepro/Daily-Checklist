@@ -1059,10 +1059,10 @@
     {
       "id": "mwsythrh9r1adp",
       "text": "73379 send reply",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-23",
-      "completedOn": null
+      "completedOn": "2026-11-23"
     },
     {
       "id": "mwsytpvcavp4r1",
