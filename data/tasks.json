@@ -1035,10 +1035,10 @@
     {
       "id": "mwsv1dwztkakut",
       "text": "saliya shift change",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "createdOn": "2026-11-23",
-      "completedOn": null
+      "completedOn": "2026-11-23"
     },
     {
       "id": "mwsv23yhw0fq35",
