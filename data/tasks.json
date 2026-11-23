@@ -1043,10 +1043,10 @@
     {
       "id": "mwsv23yhw0fq35",
       "text": "Check all durkin task and update with customer",
-      "status": "pending",
+      "status": "completed",
       "priority": "urgent",
       "createdOn": "2026-11-23",
-      "completedOn": null
+      "completedOn": "2026-11-23"
     },
     {
       "id": "mwsv2pswl2z4xu",
